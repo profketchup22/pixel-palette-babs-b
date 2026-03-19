@@ -1,0 +1,38 @@
+.header {
+    /*puts children or title and nav side by side */
+    display: flex;
+    /*pushes the title to the left and the nav to the right */
+    justify-content: space-between;
+    /*vertically centers them*/
+    align-items: center;
+
+    padding: 1rem 2rem;
+    background-color: #8c57ff;
+    /*thick line under header */
+    border-bottom: 3px solid #400101;
+}
+
+.header-title {
+    /*rem is relative to the browsers base font size so it scales nicely across devices */
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.header-nav {
+    /*puts the three links in a row */
+    display: flex;
+    gap: 1.5rem;
+}
+
+.header-nav a {
+    /*removes the default blue underline on links */
+    text-decoration: none;
+    color: #03ff52;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.header-nav a:hover {
+    /*adds the underline upon hover */
+    text-decoration: underline;
+}
