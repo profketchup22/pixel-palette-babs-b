@@ -7,9 +7,9 @@
     align-items: center;
 
     padding: 1rem 2rem;
-    background-color: #8c57ff;
+    background-color: #b596f9;
     /*thick line under header */
-    border-bottom: 3px solid #400101;
+    border-bottom: 3px solid #000000;
 }
 
 .header-title {
@@ -27,7 +27,7 @@
 .header-nav a {
     /*removes the default blue underline on links */
     text-decoration: none;
-    color: #03ff52;
+    color: #1a1a2e;
     font-weight: bold;
     font-size: 1rem;
 }
