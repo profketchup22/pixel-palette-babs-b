@@ -1,13 +1,9 @@
 
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 //recieves current tool settings as props fom canvaspage
 import './Canvas.css'
 
 function Canvas(props) {
-    // grabs canvas element from browser
-    // starts out as null becasue canvas hasnt loaded yet whne react first runs
-
-    const canvasRef = useRef(null)
 
     // isDrawing tracks whether the mouse button is currently held down
     const [isDrawing, setIsDrawing] = useState(false)
@@ -16,8 +12,7 @@ function Canvas(props) {
     function startDrawing(e) {
 
         // gets the drawing context from the canvas elemnt
-        //drawing in 2 dimesions
-        const ctx = canvasRef.current.getContext('2d')
+        const ctx = props.canvasRef.current.getContext('2d')
 
         // begin a new path so each stroke is independent
         ctx.beginPath()
@@ -37,7 +32,7 @@ function Canvas(props) {
         // if mouse button is not held down do nothing
         if (!isDrawing) return
         // get the drawing context again
-        const ctx = canvasRef.current.getContext('2d')
+        const ctx = props.canvasRef.current.getContext('2d')
         // sets the color / prop passed fomr CanvasPage
         ctx.strokeStyle = props.color
         //sets the thickness / prop passed from CanvasPage
@@ -53,15 +48,16 @@ function Canvas(props) {
 
     // runs when the user releases the mouse button
     function stopDrawing() {
+        if (!isDrawing) return
         // stops making lines
         setIsDrawing(false)
     }
     return (
         <canvas
-            ref={canvasRef}
+            ref={props.canvasRef}
             className="canvas"
-            width={800}
-            height={550}
+            width={900}
+            height={600}
             onMouseDown={startDrawing}
             onMouseMove={draw}
             onMouseUp={stopDrawing}

@@ -1,6 +1,8 @@
 import './Button.css'
 
-// defines the button component. props insidethe parenthesis means this component accepts data from any parent component that uses it
+// defines the button component. props insidethe parenthesis
+//  means this component accepts data from any parent
+//  component that uses it
 function Button(props) {
     return (
 // className="button"-connects to the css 

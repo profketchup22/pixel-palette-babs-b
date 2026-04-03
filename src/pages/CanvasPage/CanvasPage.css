@@ -1,5 +1,10 @@
 .canvas-page {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    padding: 2rem;
+    padding: 1rem;
+    gap: 1rem;
+    /* takes the full viewport height (100%viewport height)
+    subtracts a fixed 120 pixels from the height*/
+    min-height: calc(100vh - 120px);
 }
