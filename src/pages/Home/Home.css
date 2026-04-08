@@ -25,3 +25,9 @@
     margin: 0;
     line-height: 1.6;
 }
+
+.home-logo {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}

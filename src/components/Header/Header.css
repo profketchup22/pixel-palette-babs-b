@@ -6,7 +6,7 @@
     /*vertically centers them*/
     align-items: center;
 
-    padding: 1rem 2rem;
+    padding: 0.3rem 0.7rem;
     background-color: #b596f9;
     /*thick line under header */
     border-bottom: 3px solid #000000;
@@ -35,4 +35,13 @@
 .header-nav a:hover {
     /*adds the underline upon hover */
     text-decoration: underline;
+}
+
+.header-logo {
+/*shrinks header logo*/
+    height: 100px;
+    width: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
 }

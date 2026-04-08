@@ -10,7 +10,15 @@ import './Header.css'
 function Header () {
     return (
         <header className="header">
-        <h1 className="header-title">Pixel Palette</h1>
+        
+        <Link to="/">
+        <img
+          src="/images/PPlogofront.png"
+          alt="Pixel Palette logo"
+          className="header-logo"
+        />
+        </Link>
+
         <nav className="header-nav">
             <Link to="/">Home</Link>
             <Link to="/canvas">Canvas</Link>

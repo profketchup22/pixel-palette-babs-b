@@ -7,9 +7,14 @@ function Home() {
     return (
         <div className="home">
             <div className="home-main">
-                <h1 className="home-title">Welcome to Pixel Palette</h1>
+             <img
+                src="/images/PPlogofront.png"
+                alt="Pixel Palette logo"
+                className="home-logo"
+             />
+
                 <p className="home-subtitle">
-                    A nostalgic drawing application!
+                    A simple, nostalgic drawing app inspired by the 90s. Pick up a brush, place some stamps, and start creating!
                 </p>
                 <Link to="/canvas">
                 <Button label="Start Creating" type="button" />
