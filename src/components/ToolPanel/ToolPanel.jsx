@@ -1,6 +1,7 @@
 //recieves current tool seetings as props from CanvasPage
 
 import './ToolPanel.css'
+import StampPicker from '../StampPicker/StampPicker'
 
 // an array of hex color strings
 const colors = [
@@ -81,13 +82,30 @@ function ToolPanel(props) {
                 {/*if the selected tool is stamp add the active class 
                     to style it or else just use tool-button */}
                 <button
-                className={props.selectedTool === 'stamp' ? 'tool-button-active' : 'tool-button'}
-                onClick={() => props.setSelectedTool('stamp')}
+                className={props.selectedTool === 'stamp' ? 'tool-button active' : 'tool-button'}
+                onClick={() => props.selectedTool === 'stamp'
+                    ? props.setSelectedTool('brush')
+                    : props.setSelectedTool('stamp')}
                 >
-                    🔖 Stamp
+                    🖃 Stamp
                 </button>
             </div>
         </div>
+            
+        
+        {props.selectedTool === 'stamp' ? (
+            <StampPicker
+            ///* only shows when the stamp tool is selected
+            //conditional rendering using a ternary
+            //if selectedTool is stamp render StampPicker menu
+            // otherwise render nothing null
+            //passes selectedStamp and onSelectStamp 
+            // down to StampPicker as props */
+            selectedStamp={props.selectedStamp}
+            onSelectStamp={props.onSelectStamp}
+        />
+            ) : null}
+      
 
             {/*clear button */}
             <div className="tool-section">

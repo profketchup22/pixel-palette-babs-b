@@ -17,6 +17,10 @@ function CanvasPage() {
     // tracks whether the user is in brush or stamp mode
     const [selectedTool, setSelectedTool] = useState('brush')
 
+    //selectedStamp tracks whether a stamp image is currently selected
+    //starts as null meaning no stamp is selected yet
+    const [selectedStamp, setSelectedStamp] = useState(null)
+
     // canvasRef gives CanvasPage direct access to the canvas element
     // so we can use clear to reach into the actual canvas
     const canvasRef = useRef(null)
@@ -40,6 +44,8 @@ function CanvasPage() {
                 selectedTool={selectedTool}
                 setSelectedTool={setSelectedTool}
                 onClear={handleClear}
+                selectedStamp={selectedStamp}
+                onSelectStamp={setSelectedStamp}
             />
 
             <Canvas
@@ -47,6 +53,7 @@ function CanvasPage() {
                 color={color}
                 brushSize={brushSize}
                 selectedTool={selectedTool}
+                selectedStamp={selectedStamp}
             />
         </div>
     )

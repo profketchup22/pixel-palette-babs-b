@@ -52,6 +52,30 @@ function Canvas(props) {
         // stops making lines
         setIsDrawing(false)
     }
+
+    // placeStamp runs when the user clicksthe cavas in stampmode
+    //draws the selected stamp image at the click coordinates
+    function placeStamp(e) {
+
+    //only place a stamp if youre in stamp mode and a stamp is seleccted
+    //checks that you are in stamp mode and have a stamp selected
+    if (props.selectedTool !== 'stamp' || !props.selectedStamp) return
+
+    const ctx = props.canvasRef.current.getContext('2d')
+
+    // create a new image object and set its source to theselected stamp
+    const img = new Image()
+    img.src = props.selectedStamp
+
+    //have towait for the image to fully load could take a small sec 
+    // onload fires it when its ready
+    img.onload = () => {
+    // x position minus half the stamp size so that the stamp is in the middle of the cursor
+    // same for y
+    // 100s at the end to redefine the size to 100x100
+        ctx.drawImage(img, e.nativeEvent.offsetX - 50, e.nativeEvent.offsetY - 50, 100, 100)
+    }
+    }
     return (
         <canvas
             ref={props.canvasRef}
@@ -62,6 +86,7 @@ function Canvas(props) {
             onMouseMove={draw}
             onMouseUp={stopDrawing}
             onMouseLeave={stopDrawing}
+            onClick={placeStamp}
             />
     )
 }
