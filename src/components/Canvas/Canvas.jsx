@@ -12,17 +12,7 @@ function Canvas(props) {
     function startDrawing(e) {
 
         // gets the drawing context from the canvas elemnt
-        const canvas = props.canvasRef.current 
-        const ctx = canvas.getContext('2d')
-
-        // getBoundingClientRect gets the exact precise position of the canvas on the screen
-        // we subtract the canvas top andleft position from the mouse position
-        // gives coordintes relative to canvas wherever it ison the page
-        const rect = canvas.getBoundingClientRect()
-
-        //x and y refrenced ctx.moveTo(x, y)
-        const x = e.clientX - rect.left 
-        const y = e.clientY - rect.top
+        const ctx = props.canvasRef.current.getContext('2d')
 
         // begin a new path so each stroke is independent
         ctx.beginPath()
@@ -30,7 +20,7 @@ function Canvas(props) {
         //move to sets the starting point of the line
         //the x and y coordinates of where the mouse
         // is relative to the canvas elemnt
-        ctx.moveTo(x, y)
+        ctx.moveTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY)
 
         //setIsDrawing to true so onMouseMove knows too start drawing
         setIsDrawing(true)
@@ -41,17 +31,9 @@ function Canvas(props) {
 
         // if mouse button is not held down do nothing
         if (!isDrawing) return
+
         // 
-        const canvas = props.canvasRef.current
-        const ctx = canvas.getContext('2d')
-
-        // gets the precise position of the canvas on screen subtracts the margin
-        //outside the canvas to get the exact location youre clicking
-        const rect = canvas.getBoundingClientRect()
-
-        // x y refrenced in // ctx.lineTo(x, y)
-        const x = e.clientX - rect.left
-        const y = e.clientY -rect.top
+        const ctx = props.canvasRef.current.getContext('2d')
 
         // sets the color / prop passed fomr CanvasPage
         ctx.strokeStyle = props.color
@@ -61,7 +43,7 @@ function Canvas(props) {
         ctx.lineCap = 'round'
         ctx.lineJoin = 'round'
         // lineTo draws a line from the last position to the current position
-        ctx.lineTo(x, y)
+        ctx.lineTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY)
         // stroke actually makes the line visible on the canvas
         ctx.stroke()
     }
