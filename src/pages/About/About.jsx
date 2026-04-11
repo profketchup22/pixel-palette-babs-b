@@ -1,4 +1,5 @@
 import './About.css'
+import SuggestionForm from '../../components/SuggestionForm/SuggestionForm'
 
 function About() {
     return (
@@ -86,6 +87,8 @@ function About() {
             user accounts, picture save, saved favorite colors, and an undo feature.
                     </p>
                 </section>
+
+                <SuggestionForm />
 
             </div>
         </div>

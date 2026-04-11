@@ -21,6 +21,7 @@ function ColorPicker(props) {
             <div className="color-swatches">
                 {colors.map((color) => (
                     <button
+                    //converted colors to color hexadecimal code
                     key={color}
                     className="color-swatch"
                     // inline css styling for the color swatch buttons

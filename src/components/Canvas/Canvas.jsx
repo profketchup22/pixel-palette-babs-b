@@ -10,6 +10,9 @@ function Canvas(props) {
 
     // starts when the user presses the mouse button
     function startDrawing(e) {
+        
+        //if stamp mode is active dont draw
+        if (props.selectedTool === 'stamp') return
 
         // gets the drawing context from the canvas elemnt
         const ctx = props.canvasRef.current.getContext('2d')
@@ -29,6 +32,8 @@ function Canvas(props) {
     // this runs continuously as the mouse moves over the canvas
     function draw(e) {
 
+        //if stamp mode is active dont draw
+        if (props.selectedTool === 'stamp') return
         // if mouse button is not held down do nothing
         if (!isDrawing) return
         // get the drawing context again
