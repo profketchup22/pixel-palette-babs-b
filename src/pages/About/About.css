@@ -99,3 +99,13 @@
         font-size: 1.1rem;
     }
 }
+
+/*animation fade in cards*/
+@keyframes fadeIn {
+    from {opacity: 0; }
+    to { opacity: 1; }
+}
+
+.about-card {
+    animation: fadeIn 0.5s ease;
+}
