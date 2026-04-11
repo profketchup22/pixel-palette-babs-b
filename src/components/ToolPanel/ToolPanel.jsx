@@ -14,6 +14,7 @@ const colors = [
     '#b596f9',
     '#ff69b4',
     '#795548',
+    '#FFE2CF',
 ]
 
 // recieves data from CanvasPage as props
@@ -52,7 +53,7 @@ function ToolPanel(props) {
                         color of each swatch to its own color */
                     style={{
                         backgroundColor: color,
-                        /*this is a ternary operator (a shorter if/else) if the currently selected
+                        /*this is a ternary operator (if/else) if the currently selected
                             color equals this swatches colo give it a white border to show its selected
                             or else give it a dark border. {conditional rendering}  */
                         border: props.color === color ? '3px solid #fff' : '3px solid #333'
@@ -87,7 +88,7 @@ function ToolPanel(props) {
                     ? props.setSelectedTool('brush')
                     : props.setSelectedTool('stamp')}
                 >
-                    🖃 Stamp
+                    💌 Stamp
                 </button>
             </div>
         </div>

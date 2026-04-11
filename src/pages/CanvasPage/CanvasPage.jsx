@@ -8,6 +8,8 @@ import './CanvasPage.css'
 
 function CanvasPage() {
 
+    //setting up defaults for canvas page
+
     // tracks the currently selected brush color
     const [color, setColor] = useState('#000000')
 
