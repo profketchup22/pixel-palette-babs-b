@@ -34,21 +34,6 @@
     cursor: pointer;
 }
 
-/* container for the color swatches */
-.color-swatches {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.4rem;
-}
-
-/* individual color swatch button */
-.color-swatch {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
 /* tool selector buttons container*/
 .tool-buttons {
     display: flex;
@@ -91,3 +76,16 @@
     background-color: #ff3b3b;
     border-color: #ff3b3b;
 }
+
+@media (max-width: 768px) {
+    .tool-panel {
+        max-width: 100%;
+        width: 100%;
+        min-width: unset;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+        overflow-y: visible;
+    }
+}
+

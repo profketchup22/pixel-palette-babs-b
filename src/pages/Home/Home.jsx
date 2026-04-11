@@ -6,7 +6,7 @@ import './Home.css'
 function Home() {
     return (
         <div className="home">
-            <div className="home-main">
+            <div className="home-card">
              <img
                 src="/images/PPlogofront.png"
                 alt="Pixel Palette logo"

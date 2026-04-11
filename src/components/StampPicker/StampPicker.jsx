@@ -2,7 +2,6 @@
 //this is alist component it renders a StampItem for each stamp
 // gets selectedStamp and onSelectedStamp as props from toolpanel
 
-import { useState } from 'react'
 import StampItem from './StampItem'
 import './StampPicker.css'
 
