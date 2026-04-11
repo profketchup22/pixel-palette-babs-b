@@ -1,14 +1,17 @@
 
-// connect css file to component
 import './Footer.css'
 
-// capital F so react knows its a component
+
 function Footer() {
     return (
         <footer className="footer">
-            <p className="footer-text"> Pixel Palette - By Babs B</p>
+            <p className="footer-text"> Pixel Palette</p>
+            <span className="footer-divider">✦</span>
+            <p className="footer-text">Made with React</p>
+            <span className="footer-divider">✦</span>
+            <p className="footer-text">2026</p>
         </footer>
     )
 }
-// makes it able to export elsewhere
+
 export default Footer

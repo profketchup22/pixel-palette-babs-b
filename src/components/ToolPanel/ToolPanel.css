@@ -72,6 +72,21 @@
     width: fit-content;
 }
 
+/*scrollbar styling forthe tool panel*/
+.tool-panel::-webkit-scrollbar {
+    width: 6px;
+}
+/*the background track of the scrollbar*/
+.tool-panel::-webkit-scrollbar-track {
+    background-color: #1a1a2e;
+}
+
+/* the dragabble part of the scrollbar*/
+.tool-panel::-webkit-scrollbar-thumb {
+    background-color: #b596f9;
+    border-radius: 10px;
+}
+
 .action-button:hover {
     background-color: #ff3b3b;
     border-color: #ff3b3b;
