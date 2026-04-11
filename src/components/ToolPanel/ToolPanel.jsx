@@ -40,7 +40,7 @@ function ToolPanel(props) {
                     <button
                 /*Brush */
                 /*IF the selected tool is brush add the active class 
-                    to style it or ELSE just use tool-button */
+                    to style it (highlight it) otherwise the other tool is selected  */
                     className={props.selectedTool === 'brush' ? 'tool-button active' : 'tool-button'}
                 onClick={() => props.setSelectedTool('brush')}
                 >
@@ -52,9 +52,9 @@ function ToolPanel(props) {
                     to style it or else just use tool-button */}
                 <button
                 className={props.selectedTool === 'stamp' ? 'tool-button active' : 'tool-button'}
-                onClick={() => props.selectedTool === 'stamp'
-                    ? props.setSelectedTool('brush')
-                    : props.setSelectedTool('stamp')}
+
+                // if youre not on stamp then youre on brush
+                onClick={() => props.selectedTool === 'stamp' ? props.setSelectedTool('brush') : props.setSelectedTool('stamp')}
                 >
                     💌 Stamp
                 </button>
@@ -79,7 +79,7 @@ function ToolPanel(props) {
             {/*clear button */}
             <div className="tool-section">
                 {/* calls the function with this button 
-                the logic happens on canvaspage*/}
+                the logic happens on CanvasPage*/}
                 <button className="clear-button" onClick={props.onClear}>
                     🗑️ Clear Canvas
                 </button>
