@@ -2,20 +2,8 @@
 
 import './ToolPanel.css'
 import StampPicker from '../StampPicker/StampPicker'
+import ColorPicker from '../ColorPicker/ColorPicker'
 
-// an array of hex color strings
-const colors = [
-    '#000000',
-    '#ffffff',
-    '#ff3b3b',
-    '#2196f3',
-    '#ffdd57',
-    '#4caf50',
-    '#b596f9',
-    '#ff69b4',
-    '#795548',
-    '#FFE2CF',
-]
 
 // recieves data from CanvasPage as props
 // doesnt manage state just displays controls canvas page tells when something happens
@@ -38,33 +26,13 @@ function ToolPanel(props) {
                 />
             </div>
 
-        {/*color swatch tool */}
         <div className="tool-section">
-            <label className="tool-label">Color</label>
-            <div className="color-swatches">
-                {/*loops through our color array */}
-                {colors.map((color) => (
-                    <button
-                    /*in react .map needs a uniqe key prop 
-                        were using hex color string */
-                    key={color}
-                    className="color-swatch"
-                    /*this is inline css in jsx sets the background 
-                        color of each swatch to its own color */
-                    style={{
-                        backgroundColor: color,
-                        /*this is a ternary operator (if/else) if the currently selected
-                            color equals this swatches colo give it a white border to show its selected
-                            or else give it a dark border. {conditional rendering}  */
-                        border: props.color === color ? '3px solid #fff' : '3px solid #333'
-                    }}
-                    /*a swatch is clicked calls setColor from CanvasPage with that
-                        color. updates the color state in CanvasPage then flows back down as a prop */
-                    onClick={() => props.setColor(color)}
-                />
-            ))}
+            <ColorPicker
+            color={props.color}
+            setColor={props.setColor}
+            />
         </div>
-    </div>
+       
             {/*tool selector */}
             <div className="tool-section">
                 <label className="tool-label">Tool</label>
