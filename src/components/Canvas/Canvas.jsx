@@ -11,15 +11,17 @@ function Canvas(props) {
     // starts when the user presses the mouse button
     function startDrawing(e) {
         
-        //if stamp mode is active dont draw
+        //if stamp mode is active dont draw (conditional return)
         if (props.selectedTool === 'stamp') return
 
         // gets the drawing context from the canvas elemnt
         const ctx = props.canvasRef.current.getContext('2d')
 
+        //1.start fresh
         // begin a new path so each stroke is independent
         ctx.beginPath()
 
+        //2.pick up brush and place it at the start
         //move to sets the starting point of the line
         //the x and y coordinates of where the mouse
         // is relative to the canvas elemnt
@@ -32,12 +34,13 @@ function Canvas(props) {
     // this runs continuously as the mouse moves over the canvas
     function draw(e) {
 
-        //if stamp mode is active dont draw
+        //if stamp mode is active dont draw (conditional return)
         if (props.selectedTool === 'stamp') return
+
         // if mouse button is not held down do nothing
         if (!isDrawing) return
 
-        // 
+        // gets the drawing context from the canvas elemnt
         const ctx = props.canvasRef.current.getContext('2d')
 
         // sets the color / prop passed fomr CanvasPage
@@ -47,8 +50,10 @@ function Canvas(props) {
         // makes the pen tip smooth and rounded
         ctx.lineCap = 'round'
         ctx.lineJoin = 'round'
+        //3.draw to the new position
         // lineTo draws a line from the last position to the current position
         ctx.lineTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY)
+        //4.make it visible
         // stroke actually makes the line visible on the canvas
         ctx.stroke()
     }
@@ -60,7 +65,7 @@ function Canvas(props) {
         setIsDrawing(false)
     }
 
-    // placeStamp runs when the user clicksthe cavas in stampmode
+    // placeStamp runs when the user clicksthe canvas in stampmode
     //draws the selected stamp image at the click coordinates
     function placeStamp(e) {
 

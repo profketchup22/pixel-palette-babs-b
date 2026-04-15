@@ -1,12 +1,11 @@
-// Header component displays app title and navigation links
+// Header component displays logo and navigation links
 
 import { Link } from 'react-router-dom'
 
-// in react you import css directly into the component 
 import './Header.css'
 
-// h1 headin with a className so css can target it
-// the 'to' prop is like href in a regular <a> tag tells react where to go when clicked
+// header with a className so css can target it
+//  tells react where to go when clicked
 function Header () {
     return (
         <header className="header">
@@ -28,5 +27,4 @@ function Header () {
     )
 }
 
-// makes the component available to import into other files
 export default Header

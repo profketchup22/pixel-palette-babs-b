@@ -4,7 +4,7 @@ import './SuggestionForm.css'
 
 function SuggestionForm() {
     //tracks what the user types
-    const [suggestion, setSuggestion] = useState(' ')
+    const [suggestion, setSuggestion] = useState('')
     //tracks whetherthe form has been submitted
     const [submitted, setSubmitted] = useState(false)
     //runs when the user clicks submit

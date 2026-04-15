@@ -49,7 +49,7 @@ function ToolPanel(props) {
 
                 {/*Stamp */}
                 {/*if the selected tool is stamp add the active class 
-                    to style it or else just use tool-button */}
+                    to style it (highlight it) otherwise the other tool is selected  */}
                 <button
                 className={props.selectedTool === 'stamp' ? 'tool-button active' : 'tool-button'}
 
