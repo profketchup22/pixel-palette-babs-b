@@ -12,7 +12,7 @@ function SuggestionForm() {
         //stops the page from refreshing onform submit
         e.preventDefault()
         // if the form is emty do nothing
-        if (suggestion === ' ') return
+        if (suggestion === '') return
         //if the form is filled mark as submitted
         setSubmitted(true)
     }
